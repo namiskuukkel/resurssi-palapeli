@@ -1,9 +1,8 @@
+//ES6 moduuleja
 import React from 'react';
 import './App.css';
 import PersonList from './components/Personnel/PersonList'
 import ProjectList from './components/Projects/ProjectList'
-import { createStore } from 'redux'
-import { connect } from 'react-redux'
 
 let personId = 0;
 let projectId = 0;
@@ -12,6 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     //State säilytetään mahdollisimman korkealla tasolla
+    //Alikomponentit saavat tilatietoja props-objektissa parametreina välitettynä
     this.state = {
       personnel: [],
       projects: [],
@@ -20,17 +20,6 @@ class App extends React.Component {
       newProject: ''
     }
   }
-
-  handleAddPerson = (event) => {
-
-    event.preventDefault();
-
-    const newPerson = { name: this.state.newPerson, id: personId++ };
-    console.log(newPerson);
-    this.setState({ personnel: this.state.personnel.concat(newPerson) });
-    console.log(this.state);
-    this.setState({ newPerson: '' });
-  };
 
   handlePersonChange = (event) => {
 
