@@ -10,12 +10,12 @@ class ProjectList extends React.Component {
         
         return (
             <div>
-                <h2>Morde</h2>
+                <h2 title="ProjectList src/components/Projects/ProjectList.js">Projektit</h2>
                 <input type="text" value={newProject} onChange={handleProjectChange} />
                 <button onClick={handleAddProject}>Add</button>
-                <ul>
-                    {projects.map(project => <Project name={project.name} key={project.id} selectProject={selectProject}/>)}
-                </ul>
+                <div className="card-columns">
+                    {projects.map(project => <Project name={project.name} id={project.id} key={project.id} selectProject={selectProject}/>)}
+                </div>
             </div>
         )
     }

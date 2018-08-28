@@ -8,11 +8,13 @@ class Project extends React.Component {
   };
 
   render() {
-    const {id, name, requiredSkills, selectProject} = this.props;
+    const { id, name, requiredSkills, selectProject } = this.props;
 
     return (
-      <div>
-        <li key={id} onClick={selectProject}>{name}</li>
+      <div className="card" style={{ width: '18rem' }}>
+        <div className="card-body" onClick={selectProject} title="Project src/components/Projects/Project.js">
+          {id}: {name}
+        </div>
       </div>
     )
   }
